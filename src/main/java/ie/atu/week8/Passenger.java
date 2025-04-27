@@ -7,7 +7,7 @@ public class Passenger {
     private String LastName;
 
     public Passenger(String title, String FirstName, String LastName) {
-       if(!title.equals("Mr") && !title.equals("Mrs") && !title.equals("Mrs"))
+       if(!title.equals("Mr") && !title.equals("Ms") && !title.equals("Mrs"))
        {
            throw new IllegalArgumentException("Invalid Passenger Title");
        }

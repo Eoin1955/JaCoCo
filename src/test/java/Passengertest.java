@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class Passengertest {
     Passenger mypass;
+    Passenger mypass2;
+    Passenger mypass3;
 
     @BeforeEach
     void setup(){
@@ -18,6 +20,16 @@ public class Passengertest {
         assertEquals("Mr", mypass.getTitle());
         assertEquals("Eoin", mypass.getFirstName());
         assertEquals("Ager", mypass.getLastName());
+    }
+
+    @Test
+    void testTitleSuccess(){
+        assertEquals("Mr", mypass.getTitle());
+        Passenger  mypass2 = new Passenger("Ms", "Eoin", "Ager");
+        assertEquals("Ms", mypass2.getTitle());
+        Passenger  mypass3 = new Passenger("Mrs", "Eoin", "Ager");
+        assertEquals("Mrs", mypass3.getTitle());
+
     }
 
     @Test

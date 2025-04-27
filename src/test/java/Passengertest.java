@@ -38,6 +38,7 @@ public class Passengertest {
         assertThrows(IllegalArgumentException.class, ()->{mypass = new Passenger("Dr", "Eoin", "Ager");});
     }
 
+    @Test
     void testShortFirstName(){
         assertThrows(IllegalArgumentException.class, () -> {mypass = new Passenger("Mr", "Eo", "Ager");});
     }

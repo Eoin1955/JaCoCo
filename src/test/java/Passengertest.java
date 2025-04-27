@@ -3,8 +3,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class TestPassenger {
+public class Passengertest {
     Passenger mypass;
 
     @BeforeEach
@@ -17,5 +18,11 @@ public class TestPassenger {
         assertEquals("Mr", mypass.getTitle());
         assertEquals("Eoin", mypass.getFirstName());
         assertEquals("Ager", mypass.getLastName());
+    }
+
+    @Test
+    void testTitleFail(){
+        //(Mr, Ms, Mrs)
+        assertThrows(IllegalArgumentException.class, ()->{mypass = new Passenger("Dr", "Eoin", "Ager");});
     }
 }
